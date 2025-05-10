@@ -1,4 +1,3 @@
-
 import React from "react";
 import { RomanticHeader } from "@/components/RomanticHeader";
 import { ImageGallery } from "@/components/ImageGallery";
@@ -7,16 +6,20 @@ import { RomanticFooter } from "@/components/RomanticFooter";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
 import { RelationshipTimer } from "@/components/RelationshipTimer";
 
-// Calculate relationship data
+// Calculate relationship data - from 17 August 2023 to current date (10 May 2025)
 const startDate = new Date(2023, 7, 17); // August 17, 2023
-const currentDate = new Date();
+const currentDate = new Date(2025, 4, 10, 20, 35); // May 10, 2025, 20:35
 const currentMonths = Math.floor(
   (currentDate.getFullYear() - startDate.getFullYear()) * 12 + 
   currentDate.getMonth() - startDate.getMonth() + 
   (currentDate.getDate() >= startDate.getDate() ? 0 : -1)
 );
 const nextMonthNumber = currentMonths + 1;
-const nextMilestoneDate = new Date(2024, 4, 17); // May 17, 2024
+
+// Calculate next milestone date (next month anniversary)
+const nextMonth = new Date(startDate);
+nextMonth.setMonth(startDate.getMonth() + nextMonthNumber);
+const nextMilestoneDate = nextMonth;
 
 const romanticQuotes = [
   {

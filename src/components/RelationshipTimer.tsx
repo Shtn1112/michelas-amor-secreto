@@ -22,7 +22,40 @@ export const RelationshipTimer: React.FC<RelationshipTimerProps> = ({
     seconds: number;
   }>({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
+  const [elapsedTime, setElapsedTime] = useState<{
+    years: number;
+    months: number;
+    days: number;
+  }>({ years: 0, months: 0, days: 0 });
+
   useEffect(() => {
+    // Calculate elapsed time
+    const calculateElapsedTime = () => {
+      const now = new Date();
+      let years = now.getFullYear() - startDate.getFullYear();
+      let months = now.getMonth() - startDate.getMonth();
+      
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
+      
+      let days = now.getDate() - startDate.getDate();
+      if (days < 0) {
+        const lastMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+        months--;
+        days += lastMonth.getDate();
+        
+        if (months < 0) {
+          years--;
+          months += 12;
+        }
+      }
+      
+      setElapsedTime({ years, months, days });
+    };
+
+    // Calculate countdown
     const calculateTimeLeft = () => {
       const difference = nextMilestone.getTime() - new Date().getTime();
       
@@ -38,11 +71,15 @@ export const RelationshipTimer: React.FC<RelationshipTimerProps> = ({
       }
     };
 
+    calculateElapsedTime();
     calculateTimeLeft();
-    const timer = setInterval(calculateTimeLeft, 1000);
+    const timer = setInterval(() => {
+      calculateTimeLeft();
+      calculateElapsedTime();
+    }, 1000);
 
     return () => clearInterval(timer);
-  }, [nextMilestone]);
+  }, [startDate, nextMilestone]);
 
   // Format the date as DD/MM/YYYY
   const formatDate = (date: Date) => {
@@ -58,7 +95,11 @@ export const RelationshipTimer: React.FC<RelationshipTimerProps> = ({
           <Clock className="text-romantic mr-2" />
           <div className="text-center md:text-left">
             <p className="text-romantic-dark font-playfair">
-              <span className="font-bold">Nosso Amor:</span> {currentMonths} meses desde {formatDate(startDate)}
+              <span className="font-bold">Nosso Amor:</span> 
+              {elapsedTime.years > 0 && <span> {elapsedTime.years} {elapsedTime.years === 1 ? 'ano' : 'anos'}</span>}
+              {elapsedTime.months > 0 && <span> {elapsedTime.months} {elapsedTime.months === 1 ? 'mês' : 'meses'}</span>}
+              {elapsedTime.days > 0 && <span> {elapsedTime.days} {elapsedTime.days === 1 ? 'dia' : 'dias'}</span>}
+              <span className="block text-sm mt-1">desde {formatDate(startDate)}</span>
             </p>
           </div>
         </div>
