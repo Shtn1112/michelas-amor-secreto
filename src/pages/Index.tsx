@@ -8,24 +8,24 @@ import { AnimatedBackground } from "@/components/AnimatedBackground";
 
 const romanticQuotes = [
   {
-    quote: "Amar é encontrar a própria felicidade na felicidade do outro.",
-    author: "Gottfried Leibniz"
+    quote: "17 de agosto será sempre o dia em que tudo mudou na minha vida. Foi o dia em que conheci o amor da minha vida.",
+    author: "Amor Eterno"
   },
   {
-    quote: "O amor não se vê com os olhos mas com o coração.",
-    author: "William Shakespeare"
+    quote: "A tua felicidade é a minha prioridade. Amo-te hoje amanhã e sempre minha pequena",
+    author: "De Coração"
   },
   {
-    quote: "Quando te vi, apaixonei. E tu sorriste porque sabias.",
-    author: "Arrigo Boito"
+    quote: "Dizem que há dias que ficam marcados para sempre... e para mim, esse dia é 17 de agosto. Foi ali que a nossa história começou e desde então só tenho motivos para agradecer.",
+    author: "Com Amor"
   },
   {
-    quote: "Em seus olhos, encontro o caminho para o paraíso do meu coração.",
-    author: "Poema de Amor"
+    quote: "És o meu porto seguro, a minha paz e o meu maior motivo para sorrir.",
+    author: "Para Sempre"
   },
   {
-    quote: "Para sempre é o tempo que passarei te amando.",
-    author: "Anônimo"
+    quote: "Não importa onde estou, o meu pensamento está sempre em ti.",
+    author: "Todo Meu"
   }
 ];
 
