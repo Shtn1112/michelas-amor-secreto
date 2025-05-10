@@ -5,6 +5,18 @@ import { ImageGallery } from "@/components/ImageGallery";
 import { RomanticQuote } from "@/components/RomanticQuote";
 import { RomanticFooter } from "@/components/RomanticFooter";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
+import { RelationshipTimer } from "@/components/RelationshipTimer";
+
+// Calculate relationship data
+const startDate = new Date(2023, 7, 17); // August 17, 2023
+const currentDate = new Date();
+const currentMonths = Math.floor(
+  (currentDate.getFullYear() - startDate.getFullYear()) * 12 + 
+  currentDate.getMonth() - startDate.getMonth() + 
+  (currentDate.getDate() >= startDate.getDate() ? 0 : -1)
+);
+const nextMonthNumber = currentMonths + 1;
+const nextMilestoneDate = new Date(2024, 4, 17); // May 17, 2024
 
 const romanticQuotes = [
   {
@@ -36,6 +48,13 @@ const Index = () => {
       <AnimatedBackground />
       
       <div className="container max-w-5xl mx-auto px-4 py-12 relative z-10">
+        <RelationshipTimer 
+          startDate={startDate}
+          nextMilestone={nextMilestoneDate}
+          currentMonths={currentMonths}
+          nextMonthNumber={nextMonthNumber}
+        />
+        
         <RomanticHeader 
           title="Michela Tembe" 
           subtitle="Um amor para toda vida" 
