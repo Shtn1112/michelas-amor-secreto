@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,6 +53,11 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				romantic: {
+					light: '#FFDEE2',
+					DEFAULT: '#D946EF',
+					dark: '#7E69AB',
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -84,11 +90,46 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				'heart-beat': {
+					'0%, 100%': { transform: 'scale(1)' },
+					'50%': { transform: 'scale(1.1)' }
+				},
+				'fade-in': {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' }
+				},
+				'rotate': {
+					'0%': { transform: 'rotate(0deg)' },
+					'100%': { transform: 'rotate(360deg)' }
+				},
+				'heart-float': {
+					'0%': { transform: 'translateY(0) translateX(0) scale(1) rotate(0deg)', opacity: '0' },
+					'20%': { opacity: '1' },
+					'100%': { transform: 'translateY(-100px) translateX(20px) scale(0) rotate(45deg)', opacity: '0' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 3s ease-in-out infinite',
+				'heart-beat': 'heart-beat 1.5s ease-in-out infinite',
+				'fade-in': 'fade-in 1.5s ease-in-out forwards',
+				'rotate': 'rotate 15s linear infinite',
+				'heart-float': 'heart-float 4s ease-out forwards'
+			},
+			fontFamily: {
+				'dancing': ['"Dancing Script"', 'cursive'],
+				'playfair': ['"Playfair Display"', 'serif'],
+				'montserrat': ['Montserrat', 'sans-serif']
+			},
+			backgroundImage: {
+				'romantic-gradient': 'linear-gradient(to right, #ee9ca7, #ffdde1)',
+				'purple-gradient': 'linear-gradient(102.3deg, rgba(147,39,143,1) 5.9%, rgba(234,172,232,1) 64%, rgba(246,219,245,1) 89%)',
 			}
 		}
 	},
