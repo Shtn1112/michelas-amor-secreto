@@ -1,3 +1,4 @@
+
 import React from "react";
 import { RomanticHeader } from "@/components/RomanticHeader";
 import { ImageGallery } from "@/components/ImageGallery";
@@ -6,8 +7,8 @@ import { RomanticFooter } from "@/components/RomanticFooter";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
 import { RelationshipTimer } from "@/components/RelationshipTimer";
 
-// Calculate relationship data - from 17 August 2023 to current date (10 May 2025)
-const startDate = new Date(2023, 7, 17); // August 17, 2023
+// Calculate relationship data - from 17 August 2024 to current date (10 May 2025)
+const startDate = new Date(2024, 7, 17); // August 17, 2024
 const currentDate = new Date(2025, 4, 10, 20, 35); // May 10, 2025, 20:35
 const currentMonths = Math.floor(
   (currentDate.getFullYear() - startDate.getFullYear()) * 12 + 
@@ -24,23 +25,23 @@ const nextMilestoneDate = nextMonth;
 const romanticQuotes = [
   {
     quote: "17 de agosto será sempre o dia em que tudo mudou na minha vida. Foi o dia em que conheci o amor da minha vida.",
-    author: "Amor Eterno"
+    author: ""
   },
   {
     quote: "A tua felicidade é a minha prioridade. Amo-te hoje amanhã e sempre minha pequena",
-    author: "De Coração"
+    author: ""
   },
   {
     quote: "Dizem que há dias que ficam marcados para sempre... e para mim, esse dia é 17 de agosto. Foi ali que a nossa história começou e desde então só tenho motivos para agradecer.",
-    author: "Com Amor"
+    author: ""
   },
   {
     quote: "És o meu porto seguro, a minha paz e o meu maior motivo para sorrir.",
-    author: "Para Sempre"
+    author: ""
   },
   {
     quote: "Não importa onde estou, o meu pensamento está sempre em ti.",
-    author: "Todo Meu"
+    author: ""
   }
 ];
 

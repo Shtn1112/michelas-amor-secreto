@@ -89,45 +89,24 @@ export const RelationshipTimer: React.FC<RelationshipTimerProps> = ({
   };
 
   return (
-    <div className="w-full max-w-3xl mx-auto mb-8 p-4 bg-white/30 backdrop-blur-sm rounded-lg shadow-lg border border-romantic/30 animate-fade-in">
-      <div className="flex flex-col md:flex-row items-center justify-between">
-        <div className="flex items-center mb-4 md:mb-0">
-          <Clock className="text-romantic mr-2" />
-          <div className="text-center md:text-left">
-            <p className="text-romantic-dark font-playfair">
-              <span className="font-bold">Nosso Amor:</span> 
-              {elapsedTime.years > 0 && <span> {elapsedTime.years} {elapsedTime.years === 1 ? 'ano' : 'anos'}</span>}
-              {elapsedTime.months > 0 && <span> {elapsedTime.months} {elapsedTime.months === 1 ? 'mês' : 'meses'}</span>}
-              {elapsedTime.days > 0 && <span> {elapsedTime.days} {elapsedTime.days === 1 ? 'dia' : 'dias'}</span>}
-              <span className="block text-sm mt-1">desde {formatDate(startDate)}</span>
-            </p>
-          </div>
+    <div className="w-full max-w-2xl mx-auto mb-6 p-3 bg-white/30 backdrop-blur-sm rounded-lg shadow-md border border-romantic/30">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-2">
+        <div className="flex items-center">
+          <Clock className="text-romantic mr-2 h-4 w-4" />
+          <p className="text-romantic-dark font-playfair text-sm">
+            <span className="font-bold">Nosso Amor:</span> 
+            {elapsedTime.years > 0 && <span> {elapsedTime.years} {elapsedTime.years === 1 ? 'ano' : 'anos'}</span>}
+            {elapsedTime.months > 0 && <span> {elapsedTime.months} {elapsedTime.months === 1 ? 'mês' : 'meses'}</span>}
+            {elapsedTime.days > 0 && <span> {elapsedTime.days} {elapsedTime.days === 1 ? 'dia' : 'dias'}</span>}
+          </p>
         </div>
         
         <div className="flex items-center">
-          <Timer className="text-romantic mr-2" />
-          <div className="text-center md:text-left">
-            <p className="text-romantic-dark font-playfair mb-1">
-              <span className="font-bold">{nextMonthNumber} meses em:</span> {formatDate(nextMilestone)}
+          <Timer className="text-romantic mr-2 h-4 w-4" />
+          <div>
+            <p className="text-romantic-dark font-playfair text-sm">
+              <span className="font-bold">{nextMonthNumber} meses:</span> {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s
             </p>
-            <div className="flex space-x-2 justify-center md:justify-start">
-              <div className="bg-romantic/20 px-2 py-1 rounded">
-                <span className="font-bold">{timeLeft.days}</span>
-                <span className="text-sm"> dias</span>
-              </div>
-              <div className="bg-romantic/20 px-2 py-1 rounded">
-                <span className="font-bold">{timeLeft.hours}</span>
-                <span className="text-sm"> hrs</span>
-              </div>
-              <div className="bg-romantic/20 px-2 py-1 rounded">
-                <span className="font-bold">{timeLeft.minutes}</span>
-                <span className="text-sm"> min</span>
-              </div>
-              <div className="bg-romantic/20 px-2 py-1 rounded">
-                <span className="font-bold">{timeLeft.seconds}</span>
-                <span className="text-sm"> seg</span>
-              </div>
-            </div>
           </div>
         </div>
       </div>
