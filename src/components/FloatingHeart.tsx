@@ -21,6 +21,8 @@ export const FloatingHeart: React.FC<FloatingHeartProps> = ({
     color,
     animationDelay: `${delay}s`,
     position: "absolute",
+    filter: "drop-shadow(0 0 2px rgba(255,255,255,0.5))",
+    transform: `scale(${size/24}) rotate(${Math.random() * 45 - 22.5}deg)`,
   };
 
   return (
