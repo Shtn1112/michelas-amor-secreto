@@ -8,6 +8,7 @@ import { AnimatedBackground } from "@/components/AnimatedBackground";
 import { RelationshipTimer } from "@/components/RelationshipTimer";
 import { Hero } from "@/components/Hero";
 import { MemorySection } from "@/components/MemorySection";
+import { LoveMessage } from "@/components/LoveMessage";
 import { ArrowDown } from "lucide-react";
 
 // Calculate relationship data - from 17 August 2024 to current date (10 May 2025)
@@ -120,6 +121,11 @@ const Index = () => {
                 Você é a razão do meu sorriso e a inspiração para todos os meus sonhos. Juntos, construímos memórias que durarão para sempre.
               </p>
             </div>
+          </div>
+
+          {/* Love Message Component */}
+          <div className="flex justify-center mt-16 mb-16">
+            <LoveMessage />
           </div>
         </div>
       </section>
